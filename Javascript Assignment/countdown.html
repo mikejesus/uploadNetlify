@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        p {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 60px;
+            min-height: 60vh;
+        }
+        
+        #myForm {
+            display: flex;
+            justify-content: center;
+            margin-top: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Count Down Timer</h1>
+    <h3 style="text-align: center;">Entry of all details is compulsory</h3>
+    <form id="myForm" action="#" method="get">
+        <input type="text" placeholder="Enter event day" id="eventName" />
+        <input type="datetime-local" placeholder="Enter date" id="entry" />
+
+        <button onclick="countDown()">Start</button>
+    </form>
+
+    <p id="eventDisplay"></p>
+
+    <script>
+        function countDown() {
+            event.preventDefault();
+
+
+            const getEntry = document.getElementById('entry').value;
+            const deadline = new Date(getEntry).getTime();
+            // var deadline = new Date("Jan 16, 2020 15:02:00").getTime();
+            var eventName = document.getElementById('eventName').value;
+            if ((getEntry === "") || (eventName === "")) {
+                alert("Please enter ALL REQUIRED DETAILS")
+            } else {
+                var x = setInterval(function() {
+                    var now = new Date().getTime();
+                    var t = deadline - now;
+                    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+                    document.getElementById("eventDisplay").innerHTML = "We have " + "<br>" + days + "days " +
+                        hours + "hrs " + minutes + "mins " + seconds + "secs " + "<br> to " + eventName + " Event.";
+                    if (t < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = eventName + " is today. Yeepee!!!";
+                    }
+                }, 1000);
+                document.getElementById("eventDisplay").innerHTML = "";
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
