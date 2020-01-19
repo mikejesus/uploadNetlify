@@ -1,0 +1,106 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: sans-serif;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .main-content .left {
+            width: 45%;
+            height: 94vh;
+            background: linear-gradient(135deg, rgba(29, 161, 250, 1) 0%, rgba(29, 161, 250, .8) 100%), url("logo-twitter.png") left no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .main-content .left .navigation {
+            display: flex;
+            flex-direction: column;
+            padding: 40% 30% 0;
+            color: white;
+            font-size: 17px;
+            width: 100%;
+        }
+        
+        .fa-twitter {
+            padding: 15px;
+        }
+        
+        .main-content .left .navigation li {
+            padding: 2px;
+        }
+        
+        .main-content .right {
+            width: 55%;
+            height: 94vh;
+        }
+        
+        .main-content .right .content {
+            width: 50%;
+            margin: 20% 15% 0;
+        }
+        
+        .main-content .right .firstForm {
+            padding: 10px 100px 0;
+        }
+        
+        .main-content .right .firstForm input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+        }
+        
+        .main-content .right .firstForm button {
+            padding: 10px;
+            background-color: white;
+            border: 2px solid #1da1fa;
+            border-radius: 10px;
+        }
+        
+        .main-content .right .secondForm #signup {
+            width: 100%;
+            padding: 15px;
+            background-color: #1da1fa;
+            border-radius: 10px;
+            color: white;
+            border-color: none;
+        }
+        
+        .main-content .right .secondForm #login {
+            width: 100%;
+            margin-top: 5px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #1da1fa;
+            border-radius: 10px;
+            color: black;
+        }
+        
+        .footer {
+            display: flex;
+            border-top: 1px solid #eeeeee;
+        }
+        
+        .footer a {
+            text-decoration: none;
+            color: #aaaaaa;
+        }
+        
+        .footer li {
+            color: #aaaaaa;
+            padding: 6px;
+        }
