@@ -1,0 +1,259 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning Flexbox</title>
+
+    <style>
+        .container {
+            display: flex;
+        }
+        
+        .first {
+            flex: 1;
+            background-color: cornflowerblue;
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #fafafa;
+        }
+        
+        .second {
+            flex: 1 1;
+            background-color: rgb(224, 135, 34);
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #fafafa;
+        }
+        
+        @media screen and (max-width:640px) {
+            .container {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="container">
+            <div class="first">
+                This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy
+                text. This is dummy text. This is dummy text. This is dummy text. This is dummy text. This is dummy text.
+            </div>
+            <div class="second">
+                Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here.
+                Second dummy content goes here. Second dummy content goes here.
+            </div>
+            <div class="second">
+                Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here.
+                Second dummy content goes here. Second dummy content goes here.
+            </div>
+            <div class="second">
+                Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here. Second dummy content goes here.
+                Second dummy content goes here. Second dummy content goes here.
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twitter Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            height: 93vh;
+        }
+        
+        .leftContent {
+            flex: 1;
+            /* background-color: rgba(29, 161, 250, 1); */
+            background: linear-gradient(135deg, rgba(29, 161, 250, 1) 0%, rgba(29, 161, 250, .8) 100%), url("logo-twitter.png") left repeat-x;
+            background-position: -250px;
+        }
+        
+        .leftContent ul {
+            list-style: none;
+            margin: 35% 20% auto;
+        }
+        
+        .leftContent ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+        
+        .rightContent {}
+        
+        .fab,
+        .fa-twitter {
+            color: rgba(29, 161, 250);
+        }
+        
+        .fas,
+        .fa-search,
+        .fas,
+        .fa-user-friends,
+        .far,
+        .fa-comment {
+            color: white;
+            padding: 10px;
+        }
+        
+        .top {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20%;
+        }
+        
+        .middle-content {
+            width: 59%;
+            margin: 0 auto;
+        }
+        
+        .middle-content h1 {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .middle-content button {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            margin-top: 5px;
+            border-radius: 20px;
+        }
+        
+        .middle-content #signup {
+            background-color: rgba(29, 161, 250);
+            text-align: center;
+            border-width: none;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .middle-content #login {
+            background-color: white;
+            text-align: center;
+            border: 1px solid rgba(29, 161, 250);
+            font-size: 14px;
+        }
+        
+        .top button {
+            background-color: white;
+            border: 1px solid rgba(29, 161, 250);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .footer {
+            width: 100%;
+        }
+        
+        .footer ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style: none;
+            margin-top: 10px;
+        }
+        
+        .footer ul li {
+            color: #867d7d;
+            font-size: 12px;
+        }
+        
+        .footer ul li a {
+            color: #867d7d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <!-- Left hand side content -->
+            <div class="leftContent">
+                <ul>
+                    <li><i class="fas fa-search"></i><a href="#">Follow your interests.</a></li>
+                    <li><i class="fas fa-user-friends"></i><a href="#">Hear what people are talking about.</a></li>
+                    <li><i class="far fa-comment"></i><a href="#">Join the conversation</a></li>
+                </ul>
+            </div>
+            <!-- End of left hand side -->
+
+            <!-- Beginning of right hand side -->
+            <div class="rightContent">
+                <div class="top">
+                    <i class="fab fa-twitter"></i>
+                    <form>
+                        <button>Log in</button>
+                    </form>
+                </div>
+
+                <div class="middle-content">
+                    <h1>See what’s happening in the world right now</h1>
+                    <h3>Join Twitter today.</h3>
+
+                    <form>
+                        <button id="signup">Sign Up</button>
+                        <button id="login">Log in</button>
+                    </form>
+                </div>
+            </div>
+            <!-- End of right hand side -->
+
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Ads info</a></li>
+                <li><a href="#">Brand</a></li>
+                <li><a href="#">Apps</a></li>
+                <li><a href="#">Advertise</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Busineses</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Settings</a></li>
+                <li>&copy; 2020 Twitter</li>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>
